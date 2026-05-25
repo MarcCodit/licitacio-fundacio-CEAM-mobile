@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QUEPAR 2026 — App iOS Mockup</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body class="app-preview-body">
+
+  <div class="preview-wrapper">
+
+    <!-- Header explicatiu -->
+    <div class="preview-header">
+      <div>
+        <h1>QUEPAR 2026 <span style="font-style:italic;font-weight:300;">App iOS</span></h1>
+        <p>Mockup interactiu de les pantalles de l'aplicació mòbil</p>
+      </div>
+      <div class="preview-legend">
+        <span class="risk-badge r1">Molt alt</span>
+        <span class="risk-badge r2">Alt</span>
+        <span class="risk-badge r3">Transitori</span>
+        <span class="risk-badge r4">Baix</span>
+        <span class="risk-badge r5">Molt baix</span>
+      </div>
+    </div>
+
+    <!-- Grid de pantalles -->
+    <div class="screens-grid">
+
+      <!-- ── Pantalla 1: Splash / Inici ── -->
+      <div class="screen-wrap">
+        <div class="screen-label">Pantalla 1 — Inici (Splash)</div>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen screen-splash">
+            <div class="splash-bg"></div>
+            <div class="splash-content">
+              <div class="app-logo-big">
+                <div class="app-logo-mark">Q</div>
+              </div>
+              <div class="app-name-big">QUEPAR</div>
+              <div class="app-tagline">Gestió de quemes de palla<br>d'arròs · Albufera de València</div>
+              <div class="splash-campaign">Campanya 2026 · oct–des</div>
+            </div>
+            <div class="splash-footer">
+              <div class="ceam-logo-text">FUNDACIÓ CEAM</div>
+              <div class="splash-loading">
+                <div class="loading-bar"><div class="loading-fill"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="phone-home-bar"></div>
+        </div>
+      </div>
+
+      <!-- ── Pantalla 2: Inici sessió ── -->
+      <div class="screen-wrap">
+        <div class="screen-label">Pantalla 2 — Inici sessió / Registre</div>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen screen-p2">
+            <!-- Status bar -->
+            <div class="status-bar"><span>17:05</span><span style="display:flex;gap:4px;align-items:center;font-size:9px;">▲ 5G 🔋</span></div>
+            <!-- App header -->
+            <div class="app-header">
+              <div class="app-header-logo">Q<span style="font-size:9px;font-weight:400;opacity:.7;margin-left:2px;">QUEPAR</span></div>
+              <div class="header-right-btn">○</div>
+            </div>
+            <div class="last-update-strip">Última actualització: <strong>05/05/2026 a les 16:45</strong></div>
+
+            <!-- Risk bands -->
+            <div class="risk-timeline">
+              <div class="rt-row" style="--rc:var(--c-risk-4)">
+                <div class="rt-time">17:00</div>
+                <div class="rt-bar">Risc baix</div>
+              </div>
+              <div class="rt-row" style="--rc:var(--c-risk-5)">
+                <div class="rt-time">18:00</div>
+                <div class="rt-bar">Risc molt baix</div>
+              </div>
+              <div class="rt-row" style="--rc:var(--c-risk-4)">
+                <div class="rt-time">19:00</div>
+                <div class="rt-bar">Risc baix</div>
+              </div>
+            </div>
+
+            <div class="p2-divider"></div>
+            <div class="p2-desc">Inicia sessió per tenir accés a totes les opcions de QUEPAR</div>
+            <button class="app-btn-full">Iniciar sessió</button>
+          </div>
+          <div class="phone-home-bar"></div>
+        </div>
+      </div>
+
+      <!-- ── Pantalla 3: Registre usuari ── -->
+      <div class="screen-wrap">
+        <div class="screen-label">Pantalla 3 — Registre d'Usuari</div>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen screen-p3">
+            <div class="status-bar"><span>17:06</span><span style="display:flex;gap:4px;align-items:center;font-size:9px;">5G 🔋</span></div>
+            <div class="app-screen-header">
+              <button class="back-btn">‹</button>
+              <div class="app-reg-logo">⚡QUEPAR</div>
+              <div style="width:24px"></div>
+            </div>
+            <div class="reg-subtitle">Sobre el Registre de l'ús de la Albufera</div>
+
+            <div class="app-form">
+              <div class="app-form-group">
+                <div class="app-form-label">D.N.I. / N.I.E.</div>
+                <input class="app-input" type="text" placeholder="Introduïu el DNI o NIE…" />
+              </div>
+              <div class="app-form-group" style="margin-top:14px;">
+                <div class="app-form-label">Nº de telèfon</div>
+                <div style="position:relative;">
+                  <input class="app-input" type="text" placeholder="Introduïu el número de telèfon" />
+                  <span style="position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:14px;">📱</span>
+                </div>
+              </div>
+
+              <div class="app-checkbox-row" style="margin-top:16px;">
+                <input type="checkbox" id="terms" />
+                <label for="terms" style="font-size:10px;color:#555;line-height:1.4;">
+                  Al marcar esta casilla acceptes les <a href="#" style="color:#2a5f8f;">Condicions d'ús</a> i <a href="#" style="color:#2a5f8f;">Política de privacitat</a>
+                </label>
+              </div>
+
+              <button class="app-btn-full" style="margin-top:20px;">Accedir</button>
+            </div>
+          </div>
+          <div class="phone-home-bar"></div>
+        </div>
+      </div>
+
+      <!-- ── Pantalla 4: Codi SMS ── -->
+      <div class="screen-wrap">
+        <div class="screen-label">Pantalla 4 — Verificació SMS</div>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen screen-p4">
+            <div class="status-bar"><span>17:07</span><span style="display:flex;gap:4px;align-items:center;font-size:9px;">5G 🔋</span></div>
+            <div class="sms-banner">
+              <span style="font-size:9px;background:#4caf50;color:#fff;padding:2px 6px;border-radius:10px;">● QUEPAR</span>
+              <span style="font-size:9px;color:#555;margin-left:6px;">Tu codi de verificació és 428893 ✓</span>
+            </div>
+            <button class="back-btn" style="margin:10px 0 0 12px;">‹</button>
+
+            <div class="sms-content">
+              <div class="sms-icon">💬</div>
+              <div class="sms-title">En breus moments rebràs un SMS amb<br>tu codi d'accés.</div>
+              <div class="sms-subtitle">Introduïu a continuació el codi rebut:</div>
+
+              <div class="sms-code-inputs">
+                <input class="code-input" type="text" maxlength="1" value="4" />
+                <input class="code-input" type="text" maxlength="1" value="2" />
+                <input class="code-input" type="text" maxlength="1" value="8" />
+                <input class="code-input" type="text" maxlength="1" value="8" />
+                <input class="code-input" type="text" maxlength="1" value="9" />
+                <input class="code-input" type="text" maxlength="1" value="3" />
+              </div>
+
+              <button class="app-btn-full" style="margin-top:20px;">Continuar</button>
+            </div>
+          </div>
+          <div class="phone-home-bar"></div>
+        </div>
+      </div>
+
+      <!-- ── Pantalla 5: Pronòstic ── -->
+      <div class="screen-wrap">
+        <div class="screen-label">Pantalla 5 — Pronòstic de Risc (24h)</div>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen screen-p5">
+            <div class="status-bar"><span>17:07</span><span style="display:flex;gap:4px;align-items:center;font-size:9px;">▲ 5G 🔋</span></div>
+            <div class="app-header">
+              <button class="hamburger-btn">☰</button>
+              <div class="screen-title-center">Nivell de Risc</div>
+              <button class="refresh-btn">○</button>
+            </div>
+            <div class="last-update-strip">Última actualització: <strong>05/05/2026 a les 16:45</strong></div>
+
+            <div class="risk-list" id="risk-list-app">
+              <!-- filled by JS -->
+            </div>
+
+            <button class="app-fab">+</button>
+          </div>
+          <div class="phone-home-bar"></div>
+        </div>
+      </div>
+
+      <!-- ── Pantalla 6: Menú ── -->
+      <div class="screen-wrap">
+        <div class="screen-label">Pantalla 6 — Menú d'Opcions</div>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen screen-p6">
+            <div class="status-bar"><span>17:08</span><span style="display:flex;gap:4px;align-items:center;font-size:9px;">▲ 5G 🔋</span></div>
+            <div class="app-header">
+              <button class="hamburger-btn">☰</button>
+              <div class="screen-title-center"></div>
+              <button class="close-menu-btn" onclick="this.closest('.phone-screen').classList.toggle('menu-open')">✕</button>
+            </div>
+
+            <!-- Slide-in drawer -->
+            <div class="menu-overlay">
+              <div class="menu-drawer">
+                <div class="menu-header">
+                  <div class="ceam-logo-small">CEAM</div>
+                </div>
+                <div class="menu-items">
+                  <a class="menu-item">
+                    <span class="menu-icon">🔥</span> Registra la teva activitat
+                    <span class="menu-risk r4">BAIX</span>
+                  </a>
+                  <a class="menu-item">
+                    <span class="menu-icon">📋</span> Historial de quema
+                    <span class="menu-risk r4">BAIX</span>
+                  </a>
+                  <a class="menu-item">
+                    <span class="menu-icon">📄</span> Instruccions Tècniques
+                    <span class="menu-risk r4">BAIX</span>
+                  </a>
+                  <a class="menu-item">
+                    <span class="menu-icon">🌍</span> Entorno
+                    <span class="menu-risk r4">BAIX</span>
+                  </a>
+                  <a class="menu-item">
+                    <span class="menu-icon">🌐</span> Idioma
+                    <span class="menu-risk r4">BAIX</span>
+                  </a>
+                </div>
+                <button class="menu-logout">Tancar sessió</button>
+              </div>
+            </div>
+          </div>
+          <div class="phone-home-bar"></div>
+        </div>
+      </div>
+
+      <!-- ── Pantalla 7: Registre quema ── -->
+      <div class="screen-wrap">
+        <div class="screen-label">Pantalla 7 — Registre Quema (Alta)</div>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen screen-p7">
+            <div class="status-bar"><span>17:08</span><span style="display:flex;gap:4px;align-items:center;font-size:9px;">▲ 5G 🔋</span></div>
+            <div class="app-screen-header">
+              <button class="back-btn">‹</button>
+              <div class="screen-title-center" style="font-size:11px;">Registra tu activitat</div>
+              <div style="width:24px"></div>
+            </div>
+
+            <div class="app-form" style="padding:12px;">
+              <div class="app-form-group">
+                <div class="app-form-label">D.N.I. / N.I.E.</div>
+                <div class="app-input-fill">25409558Q</div>
+              </div>
+              <div class="app-form-group" style="margin-top:10px;">
+                <div class="app-form-label">Província</div>
+                <div class="app-select-row">
+                  <div class="app-input-fill app-placeholder">Selecciona la teva província…</div>
+                  <span>›</span>
+                </div>
+              </div>
+              <div class="app-form-group" style="margin-top:10px;">
+                <div class="app-form-label">Municipi</div>
+                <div class="app-select-row">
+                  <div class="app-input-fill app-placeholder">Selecciona el teu municipi…</div>
+                  <span>›</span>
+                </div>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px;">
+                <div class="app-form-group">
+                  <div class="app-form-label">Polígon</div>
+                  <input class="app-input" type="text" placeholder="Número…" style="font-size:11px;" />
+                </div>
+                <div class="app-form-group">
+                  <div class="app-form-label">Parcel·la</div>
+                  <input class="app-input" type="text" placeholder="Número…" style="font-size:11px;" />
+                </div>
+              </div>
+              <div class="app-form-group" style="margin-top:10px;">
+                <div class="app-form-label">Recinte</div>
+                <input class="app-input" type="text" placeholder="Número…" style="font-size:11px;" />
+              </div>
+              <button class="app-btn-full" style="margin-top:20px;font-size:12px;">Següent</button>
+            </div>
+          </div>
+          <div class="phone-home-bar"></div>
+        </div>
+      </div>
+
+    </div><!-- /screens-grid -->
+  </div><!-- /preview-wrapper -->
+
+  <script src="js/utils.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
