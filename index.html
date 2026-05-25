@@ -1,304 +1,724 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>QUEPAR 2026 — App iOS Mockup</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="css/app.css" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QUEPAR 2026 — App Móvil iOS (Prototipo)</title>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
-<body class="app-preview-body">
+<body>
 
-  <div class="preview-wrapper">
+<h2 class="sr-only">Prototipo interactivo de la app móvil QUEPAR 2026 para iOS. Navega entre las pantallas: splash, acceso público, login, OTP, inicio, alta de quema, historial y recursos.</h2>
 
-    <!-- Header explicatiu -->
-    <div class="preview-header">
-      <div>
-        <h1>QUEPAR 2026 <span style="font-style:italic;font-weight:300;">App iOS</span></h1>
-        <p>Mockup interactiu de les pantalles de l'aplicació mòbil</p>
+<!-- PILLS NAV -->
+<div class="nav-pills" id="navPills">
+  <button class="nav-pill active" onclick="goto('splash')">Splash</button>
+  <button class="nav-pill" onclick="goto('home-public')">Acceso público</button>
+  <button class="nav-pill" onclick="goto('login')">Login</button>
+  <button class="nav-pill" onclick="goto('otp')">OTP</button>
+  <button class="nav-pill" onclick="goto('home-main')">Inicio</button>
+  <button class="nav-pill" onclick="goto('alta-quema')">Alta quema</button>
+  <button class="nav-pill" onclick="goto('historial')">Historial</button>
+  <button class="nav-pill" onclick="goto('recursos')">Recursos</button>
+  <button class="nav-pill" onclick="goto('perfil')">Perfil</button>
+</div>
+
+<!-- DEVICE -->
+<div class="device-shell" role="img" aria-label="Mockup de dispositivo iPhone con la app QUEPAR">
+  <div class="device-screen">
+
+    <!-- ========== SPLASH ========== -->
+    <div class="screen active splash-screen" id="screen-splash">
+      <div class="status-bar" style="position:absolute;top:0;left:0;right:0;color:rgba(255,255,255,0.9);">
+        <span class="time">9:41</span>
+        <div class="icons">
+          <svg width="16" height="12" fill="none" viewBox="0 0 16 12"><rect x="0" y="3" width="3" height="9" rx="1" fill="rgba(255,255,255,0.9)"/><rect x="4.5" y="2" width="3" height="10" rx="1" fill="rgba(255,255,255,0.9)"/><rect x="9" y="0" width="3" height="12" rx="1" fill="rgba(255,255,255,0.9)"/><rect x="13.5" y="0" width="2" height="12" rx="1" fill="rgba(255,255,255,0.4)"/></svg>
+          <svg width="25" height="12" viewBox="0 0 25 12" fill="none"><rect x="0.5" y="0.5" width="21" height="11" rx="3.5" stroke="rgba(255,255,255,0.35)"/><rect x="2" y="2" width="17" height="8" rx="2" fill="rgba(255,255,255,0.9)"/><path d="M23 4.5V7.5C23.8 7.2 24.5 6.5 24.5 6C24.5 5.5 23.8 4.8 23 4.5Z" fill="rgba(255,255,255,0.4)"/></svg>
+        </div>
       </div>
-      <div class="preview-legend">
-        <span class="risk-badge r1">Molt alt</span>
-        <span class="risk-badge r2">Alt</span>
-        <span class="risk-badge r3">Transitori</span>
-        <span class="risk-badge r4">Baix</span>
-        <span class="risk-badge r5">Molt baix</span>
+      <div style="height:47px"></div>
+      <div class="splash-logo">
+        <svg viewBox="0 0 54 54" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          <path d="M27 8C27 8 12 16 12 28C12 36.8 19.2 44 28 44C36.8 44 44 36.8 44 28C44 20 38 14 32 12" stroke="rgba(255,255,255,0.9)"/>
+          <path d="M27 8L32 12" stroke="rgba(255,255,255,0.9)"/>
+          <path d="M20 26C20 26 22 20 28 20C34 20 36 26 36 28C36 32.4 32.4 36 28 36C23.6 36 20 32.4 20 28" stroke="rgba(255,255,255,0.7)"/>
+          <circle cx="28" cy="29" r="4" fill="rgba(255,255,255,0.8)" stroke="none"/>
+          <path d="M16 36L12 40M40 36L44 40" stroke="rgba(255,255,255,0.5)"/>
+        </svg>
+      </div>
+      <div>
+        <div class="splash-title">QUEPAR</div>
+        <div style="font-size:14px;font-weight:500;color:rgba(255,255,255,0.7);text-align:center;letter-spacing:2px;margin-top:4px">2026</div>
+      </div>
+      <div class="splash-subtitle">Gestión de las actividades de<br>quema de la paja del arroz<br>en la Albufera de Valencia</div>
+      <div class="splash-badge">Campaña Oct – Dic 2026</div>
+      <div style="margin-top:16px;width:100%">
+        <div style="font-size:13px;color:rgba(255,255,255,0.5);text-align:center;margin-bottom:8px">Fundación CEAM</div>
+        <button class="big-btn" onclick="goto('home-public')" style="background:rgba(255,255,255,0.2);color:#fff;border:1px solid rgba(255,255,255,0.35);">Acceder a la app →</button>
       </div>
     </div>
 
-    <!-- Grid de pantalles -->
-    <div class="screens-grid">
-
-      <!-- ── Pantalla 1: Splash / Inici ── -->
-      <div class="screen-wrap">
-        <div class="screen-label">Pantalla 1 — Inici (Splash)</div>
-        <div class="phone-frame">
-          <div class="phone-notch"></div>
-          <div class="phone-screen screen-splash">
-            <div class="splash-bg"></div>
-            <div class="splash-content">
-              <div class="app-logo-big">
-                <div class="app-logo-mark">Q</div>
-              </div>
-              <div class="app-name-big">QUEPAR</div>
-              <div class="app-tagline">Gestió de quemes de palla<br>d'arròs · Albufera de València</div>
-              <div class="splash-campaign">Campanya 2026 · oct–des</div>
-            </div>
-            <div class="splash-footer">
-              <div class="ceam-logo-text">FUNDACIÓ CEAM</div>
-              <div class="splash-loading">
-                <div class="loading-bar"><div class="loading-fill"></div></div>
-              </div>
-            </div>
-          </div>
-          <div class="phone-home-bar"></div>
+    <!-- ========== ACCESO PÚBLICO ========== -->
+    <div class="screen" id="screen-home-public">
+      <div class="status-bar">
+        <span class="time">9:41</span>
+        <div class="icons">
+          <svg width="16" height="12" fill="none" viewBox="0 0 16 12"><rect x="0" y="3" width="3" height="9" rx="1" fill="currentColor"/><rect x="4.5" y="2" width="3" height="10" rx="1" fill="currentColor"/><rect x="9" y="0" width="3" height="12" rx="1" fill="currentColor"/><rect x="13.5" y="0" width="2" height="12" rx="1" fill="currentColor" opacity=".4"/></svg>
+          <svg width="25" height="12" viewBox="0 0 25 12" fill="none"><rect x="0.5" y="0.5" width="21" height="11" rx="3.5" stroke="currentColor" opacity=".35"/><rect x="2" y="2" width="15" height="8" rx="2" fill="currentColor"/></svg>
         </div>
       </div>
-
-      <!-- ── Pantalla 2: Inici sessió ── -->
-      <div class="screen-wrap">
-        <div class="screen-label">Pantalla 2 — Inici sessió / Registre</div>
-        <div class="phone-frame">
-          <div class="phone-notch"></div>
-          <div class="phone-screen screen-p2">
-            <!-- Status bar -->
-            <div class="status-bar"><span>17:05</span><span style="display:flex;gap:4px;align-items:center;font-size:9px;">▲ 5G 🔋</span></div>
-            <!-- App header -->
-            <div class="app-header">
-              <div class="app-header-logo">Q<span style="font-size:9px;font-weight:400;opacity:.7;margin-left:2px;">QUEPAR</span></div>
-              <div class="header-right-btn">○</div>
+      <div style="padding:20px 16px 12px;display:flex;align-items:center;gap:12px">
+        <div style="width:42px;height:42px;background:#1B5E20;border-radius:12px;display:flex;align-items:center;justify-content:center">
+          <svg width="24" height="24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </div>
+        <div>
+          <div style="font-size:22px;font-weight:700">Buenos días</div>
+          <div style="font-size:13px;color:var(--ios-gray)">Lunes, 6 de octubre de 2026</div>
+        </div>
+        <button onclick="goto('login')" style="margin-left:auto;background:var(--ios-blue);color:#fff;border:none;border-radius:10px;padding:8px 14px;font-size:14px;font-weight:600;cursor:pointer">Iniciar sesión</button>
+      </div>
+      <div class="scroll-content">
+        <div style="padding:0 16px 8px">
+          <div style="background:#1B5E20;border-radius:14px;padding:16px;color:#fff">
+            <div style="font-size:13px;color:rgba(255,255,255,0.7);margin-bottom:4px">Previsión de riesgo ambiental</div>
+            <div style="font-size:15px;font-weight:700;margin-bottom:10px">Próximas 3 horas</div>
+            <div class="risk-preview-bar">
+              <div class="risk-seg seg-green">10h<br>Bajo</div>
+              <div class="risk-seg seg-green">11h<br>Bajo</div>
+              <div class="risk-seg seg-red">12h<br>Alto</div>
             </div>
-            <div class="last-update-strip">Última actualització: <strong>05/05/2026 a les 16:45</strong></div>
-
-            <!-- Risk bands -->
-            <div class="risk-timeline">
-              <div class="rt-row" style="--rc:var(--c-risk-4)">
-                <div class="rt-time">17:00</div>
-                <div class="rt-bar">Risc baix</div>
-              </div>
-              <div class="rt-row" style="--rc:var(--c-risk-5)">
-                <div class="rt-time">18:00</div>
-                <div class="rt-bar">Risc molt baix</div>
-              </div>
-              <div class="rt-row" style="--rc:var(--c-risk-4)">
-                <div class="rt-time">19:00</div>
-                <div class="rt-bar">Risc baix</div>
-              </div>
-            </div>
-
-            <div class="p2-divider"></div>
-            <div class="p2-desc">Inicia sessió per tenir accés a totes les opcions de QUEPAR</div>
-            <button class="app-btn-full">Iniciar sessió</button>
+            <div style="font-size:11px;color:rgba(255,255,255,0.55);margin-top:8px">Actualizado 09:41 · Fuente: Fundación CEAM</div>
           </div>
-          <div class="phone-home-bar"></div>
+        </div>
+        <div class="section-header">Descripción de la aplicación</div>
+        <div class="ios-card" style="margin-bottom:12px">
+          <div style="padding:16px;font-size:15px;line-height:1.6;color:#555">
+            QUEPAR es la herramienta oficial de la Fundación CEAM para gestionar los permisos de quema de los residuos de la paja del arroz en la zona del Parque Natural de la Albufera. Es necesario iniciar sesión con DNI y teléfono para registrar quemas.
+          </div>
+        </div>
+        <div class="section-header">Leyenda de riesgo</div>
+        <div class="ios-card">
+          <div class="ios-card-row" style="cursor:default">
+            <div class="risk-dot dot-green"></div>
+            <span class="row-label" style="font-size:15px">Riesgo bajo / muy bajo</span>
+            <span class="badge badge-green">Permitido</span>
+          </div>
+          <div class="ios-card-row" style="cursor:default">
+            <div class="risk-dot dot-orange"></div>
+            <span class="row-label" style="font-size:15px">Situación transitoria</span>
+            <span class="badge badge-orange">Precaución</span>
+          </div>
+          <div class="ios-card-row" style="cursor:default">
+            <div class="risk-dot dot-red"></div>
+            <span class="row-label" style="font-size:15px">Riesgo alto / muy alto</span>
+            <span class="badge badge-red">No permitido</span>
+          </div>
+          <div class="ios-card-row" style="cursor:default">
+            <div class="risk-dot dot-gray"></div>
+            <span class="row-label" style="font-size:15px">Sin datos</span>
+            <span class="badge badge-gray">—</span>
+          </div>
+        </div>
+        <div style="height:20px"></div>
+      </div>
+    </div>
+
+    <!-- ========== LOGIN ========== -->
+    <div class="screen" id="screen-login">
+      <div class="status-bar">
+        <span class="time">9:41</span>
+        <div class="icons"><svg width="16" height="12" fill="none" viewBox="0 0 16 12"><rect x="0" y="3" width="3" height="9" rx="1" fill="currentColor"/><rect x="4.5" y="2" width="3" height="10" rx="1" fill="currentColor"/><rect x="9" y="0" width="3" height="12" rx="1" fill="currentColor"/></svg></div>
+      </div>
+      <div class="nav-bar">
+        <button class="back-btn" onclick="goto('home-public')">
+          <svg viewBox="0 0 10 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 2L2 8L8 14"/></svg>
+          Volver
+        </button>
+        <span class="title">Inicio de sesión</span>
+      </div>
+      <div class="scroll-content" style="padding-top:24px">
+        <div style="text-align:center;padding:0 32px 24px">
+          <div style="width:56px;height:56px;background:#1B5E20;border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px">
+            <svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div style="font-size:22px;font-weight:700;margin-bottom:6px">Identifícate</div>
+          <div style="font-size:15px;color:var(--ios-gray);line-height:1.5">Introduce tu DNI y número de teléfono para acceder</div>
+        </div>
+        <div class="section-header">Datos de acceso</div>
+        <div class="ios-field">
+          <div class="ios-field-row">
+            <span class="ios-field-label">DNI / NIE</span>
+            <input class="ios-field-input" type="text" placeholder="12345678A" value="48291045K" maxlength="9"/>
+          </div>
+          <div class="ios-field-row">
+            <span class="ios-field-label">Teléfono</span>
+            <input class="ios-field-input" type="tel" placeholder="6XX XXX XXX" value="612 345 678"/>
+          </div>
+        </div>
+        <div style="padding:0 16px 12px">
+          <div style="background:#EFF8FF;border-radius:12px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start">
+            <svg width="18" height="18" fill="none" stroke="var(--ios-blue)" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <span style="font-size:13px;color:#1565C0;line-height:1.5">Se enviará un código de verificación por SMS al teléfono indicado.</span>
+          </div>
+        </div>
+        <button class="big-btn primary" onclick="goto('otp')">Enviar código de verificación</button>
+        <div style="padding:16px 16px 0;text-align:center">
+          <span style="font-size:13px;color:var(--ios-gray)">Al continuar, aceptas los </span>
+          <a style="font-size:13px;color:var(--ios-blue);cursor:pointer">Términos de uso</a>
+          <span style="font-size:13px;color:var(--ios-gray)"> y la </span>
+          <a style="font-size:13px;color:var(--ios-blue);cursor:pointer">Política de privacidad</a>
+        </div>
+        <div style="height:24px"></div>
+      </div>
+    </div>
+
+    <!-- ========== OTP ========== -->
+    <div class="screen" id="screen-otp">
+      <div class="status-bar">
+        <span class="time">9:41</span>
+        <div class="icons"><svg width="16" height="12" fill="none" viewBox="0 0 16 12"><rect x="0" y="3" width="3" height="9" rx="1" fill="currentColor"/><rect x="4.5" y="2" width="3" height="10" rx="1" fill="currentColor"/><rect x="9" y="0" width="3" height="12" rx="1" fill="currentColor"/></svg></div>
+      </div>
+      <div class="nav-bar">
+        <button class="back-btn" onclick="goto('login')">
+          <svg viewBox="0 0 10 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 2L2 8L8 14"/></svg>
+          Atrás
+        </button>
+        <span class="title">Verificación</span>
+      </div>
+      <div class="scroll-content" style="padding-top:32px">
+        <div style="text-align:center;padding:0 32px 24px">
+          <div style="font-size:22px;font-weight:700;margin-bottom:8px">Código SMS</div>
+          <div style="font-size:15px;color:var(--ios-gray);line-height:1.5">Hemos enviado un código de 6 dígitos al<br><strong style="color:#1C1C1E">612 *** 678</strong></div>
+        </div>
+        <div class="otp-boxes">
+          <div class="otp-box filled">4</div>
+          <div class="otp-box filled">8</div>
+          <div class="otp-box filled">7</div>
+          <div class="otp-box active">_</div>
+          <div class="otp-box"></div>
+          <div class="otp-box"></div>
+        </div>
+        <div style="text-align:center;padding:12px 0 24px">
+          <span style="font-size:14px;color:var(--ios-gray)">¿No has recibido el código? </span>
+          <span style="font-size:14px;color:var(--ios-blue);cursor:pointer">Reenviar (45s)</span>
+        </div>
+        <button class="big-btn primary" onclick="goto('home-main')">Verificar y acceder</button>
+        <div style="margin:12px 16px 0;background:#E8F5E9;border-radius:12px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start">
+          <svg width="18" height="18" fill="none" stroke="#2E7D32" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" style="flex-shrink:0"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span style="font-size:13px;color:#1B5E20;line-height:1.5">Tus datos se gestionan conforme al RGPD. Ninguna información personal será compartida con terceros.</span>
+        </div>
+        <div style="height:24px"></div>
+      </div>
+    </div>
+
+    <!-- ========== INICIO (AUTENTICADO) ========== -->
+    <div class="screen" id="screen-home-main">
+      <div class="status-bar">
+        <span class="time">9:41</span>
+        <div class="icons">
+          <svg width="16" height="12" fill="none" viewBox="0 0 16 12"><rect x="0" y="3" width="3" height="9" rx="1" fill="currentColor"/><rect x="4.5" y="2" width="3" height="10" rx="1" fill="currentColor"/><rect x="9" y="0" width="3" height="12" rx="1" fill="currentColor"/></svg>
+          <svg width="25" height="12" viewBox="0 0 25 12" fill="none"><rect x="0.5" y="0.5" width="21" height="11" rx="3.5" stroke="currentColor" opacity=".35"/><rect x="2" y="2" width="17" height="8" rx="2" fill="currentColor"/></svg>
         </div>
       </div>
-
-      <!-- ── Pantalla 3: Registre usuari ── -->
-      <div class="screen-wrap">
-        <div class="screen-label">Pantalla 3 — Registre d'Usuari</div>
-        <div class="phone-frame">
-          <div class="phone-notch"></div>
-          <div class="phone-screen screen-p3">
-            <div class="status-bar"><span>17:06</span><span style="display:flex;gap:4px;align-items:center;font-size:9px;">5G 🔋</span></div>
-            <div class="app-screen-header">
-              <button class="back-btn">‹</button>
-              <div class="app-reg-logo">⚡QUEPAR</div>
-              <div style="width:24px"></div>
-            </div>
-            <div class="reg-subtitle">Sobre el Registre de l'ús de la Albufera</div>
-
-            <div class="app-form">
-              <div class="app-form-group">
-                <div class="app-form-label">D.N.I. / N.I.E.</div>
-                <input class="app-input" type="text" placeholder="Introduïu el DNI o NIE…" />
-              </div>
-              <div class="app-form-group" style="margin-top:14px;">
-                <div class="app-form-label">Nº de telèfon</div>
-                <div style="position:relative;">
-                  <input class="app-input" type="text" placeholder="Introduïu el número de telèfon" />
-                  <span style="position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:14px;">📱</span>
-                </div>
-              </div>
-
-              <div class="app-checkbox-row" style="margin-top:16px;">
-                <input type="checkbox" id="terms" />
-                <label for="terms" style="font-size:10px;color:#555;line-height:1.4;">
-                  Al marcar esta casilla acceptes les <a href="#" style="color:#2a5f8f;">Condicions d'ús</a> i <a href="#" style="color:#2a5f8f;">Política de privacitat</a>
-                </label>
-              </div>
-
-              <button class="app-btn-full" style="margin-top:20px;">Accedir</button>
+      <div class="scroll-content">
+        <div style="padding:16px 16px 8px;display:flex;align-items:center;justify-content:space-between">
+          <div>
+            <div style="font-size:22px;font-weight:700">QUEPAR 2026</div>
+            <div style="display:flex;align-items:center;gap:6px;margin-top:4px">
+              <span class="update-chip">
+                <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-.08-2.86"/></svg>
+                Act. 09:41
+              </span>
+              <span class="badge badge-green">Campaña activa</span>
             </div>
           </div>
-          <div class="phone-home-bar"></div>
+          <button onclick="goto('perfil')" style="width:36px;height:36px;border-radius:50%;background:#E8F5E9;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer">
+            <svg width="20" height="20" fill="none" stroke="#2E7D32" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </button>
         </div>
-      </div>
-
-      <!-- ── Pantalla 4: Codi SMS ── -->
-      <div class="screen-wrap">
-        <div class="screen-label">Pantalla 4 — Verificació SMS</div>
-        <div class="phone-frame">
-          <div class="phone-notch"></div>
-          <div class="phone-screen screen-p4">
-            <div class="status-bar"><span>17:07</span><span style="display:flex;gap:4px;align-items:center;font-size:9px;">5G 🔋</span></div>
-            <div class="sms-banner">
-              <span style="font-size:9px;background:#4caf50;color:#fff;padding:2px 6px;border-radius:10px;">● QUEPAR</span>
-              <span style="font-size:9px;color:#555;margin-left:6px;">Tu codi de verificació és 428893 ✓</span>
-            </div>
-            <button class="back-btn" style="margin:10px 0 0 12px;">‹</button>
-
-            <div class="sms-content">
-              <div class="sms-icon">💬</div>
-              <div class="sms-title">En breus moments rebràs un SMS amb<br>tu codi d'accés.</div>
-              <div class="sms-subtitle">Introduïu a continuació el codi rebut:</div>
-
-              <div class="sms-code-inputs">
-                <input class="code-input" type="text" maxlength="1" value="4" />
-                <input class="code-input" type="text" maxlength="1" value="2" />
-                <input class="code-input" type="text" maxlength="1" value="8" />
-                <input class="code-input" type="text" maxlength="1" value="8" />
-                <input class="code-input" type="text" maxlength="1" value="9" />
-                <input class="code-input" type="text" maxlength="1" value="3" />
+        <div style="padding:0 16px 12px">
+          <div style="background:#1B5E20;border-radius:16px;padding:18px;color:#fff">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px">
+              <div>
+                <div style="font-size:13px;color:rgba(255,255,255,0.7)">Previsión de riesgo · 24h</div>
+                <div style="font-size:17px;font-weight:700;margin-top:2px">Hoy, 6 de octubre</div>
               </div>
-
-              <button class="app-btn-full" style="margin-top:20px;">Continuar</button>
+              <span style="background:rgba(255,255,255,0.15);border-radius:10px;padding:4px 10px;font-size:12px;color:rgba(255,255,255,0.85)">CEAM</span>
+            </div>
+            <div class="risk-24h-grid" style="padding:0;margin-bottom:12px">
+              <div class="risk-cell"><span class="risk-cell-hour">08h</span><div class="risk-cell-bar rc-green"></div></div>
+              <div class="risk-cell"><span class="risk-cell-hour">09h</span><div class="risk-cell-bar rc-green"></div></div>
+              <div class="risk-cell"><span class="risk-cell-hour">10h</span><div class="risk-cell-bar rc-green"></div></div>
+              <div class="risk-cell"><span class="risk-cell-hour">11h</span><div class="risk-cell-bar rc-orange"></div></div>
+              <div class="risk-cell"><span class="risk-cell-hour">12h</span><div class="risk-cell-bar rc-red"></div></div>
+              <div class="risk-cell"><span class="risk-cell-hour">13h</span><div class="risk-cell-bar rc-red"></div></div>
+              <div class="risk-cell"><span class="risk-cell-hour">14h</span><div class="risk-cell-bar rc-red"></div></div>
+              <div class="risk-cell"><span class="risk-cell-hour">15h</span><div class="risk-cell-bar rc-orange"></div></div>
+              <div class="risk-cell"><span class="risk-cell-hour">16h</span><div class="risk-cell-bar rc-green"></div></div>
+              <div class="risk-cell"><span class="risk-cell-hour">17h</span><div class="risk-cell-bar rc-green"></div></div>
+              <div class="risk-cell"><span class="risk-cell-hour">18h</span><div class="risk-cell-bar rc-green"></div></div>
+              <div class="risk-cell"><span class="risk-cell-hour">19h</span><div class="risk-cell-bar rc-gray"></div></div>
+            </div>
+            <div style="display:flex;gap:12px;font-size:11px;color:rgba(255,255,255,0.7)">
+              <span>🟢 Bajo</span><span>🟠 Transición</span><span>🔴 Alto</span><span>⚫ Sin datos</span>
             </div>
           </div>
-          <div class="phone-home-bar"></div>
         </div>
-      </div>
-
-      <!-- ── Pantalla 5: Pronòstic ── -->
-      <div class="screen-wrap">
-        <div class="screen-label">Pantalla 5 — Pronòstic de Risc (24h)</div>
-        <div class="phone-frame">
-          <div class="phone-notch"></div>
-          <div class="phone-screen screen-p5">
-            <div class="status-bar"><span>17:07</span><span style="display:flex;gap:4px;align-items:center;font-size:9px;">▲ 5G 🔋</span></div>
-            <div class="app-header">
-              <button class="hamburger-btn">☰</button>
-              <div class="screen-title-center">Nivell de Risc</div>
-              <button class="refresh-btn">○</button>
+        <div style="padding:0 16px 12px">
+          <div class="risk-indicator" style="background:#E8F5E9">
+            <div class="risk-icon-lg" style="background:#C8E6C9">
+              <svg width="26" height="26" fill="none" stroke="#2E7D32" stroke-width="2.5" stroke-linecap="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
-            <div class="last-update-strip">Última actualització: <strong>05/05/2026 a les 16:45</strong></div>
-
-            <div class="risk-list" id="risk-list-app">
-              <!-- filled by JS -->
-            </div>
-
-            <button class="app-fab">+</button>
-          </div>
-          <div class="phone-home-bar"></div>
-        </div>
-      </div>
-
-      <!-- ── Pantalla 6: Menú ── -->
-      <div class="screen-wrap">
-        <div class="screen-label">Pantalla 6 — Menú d'Opcions</div>
-        <div class="phone-frame">
-          <div class="phone-notch"></div>
-          <div class="phone-screen screen-p6">
-            <div class="status-bar"><span>17:08</span><span style="display:flex;gap:4px;align-items:center;font-size:9px;">▲ 5G 🔋</span></div>
-            <div class="app-header">
-              <button class="hamburger-btn">☰</button>
-              <div class="screen-title-center"></div>
-              <button class="close-menu-btn" onclick="this.closest('.phone-screen').classList.toggle('menu-open')">✕</button>
-            </div>
-
-            <!-- Slide-in drawer -->
-            <div class="menu-overlay">
-              <div class="menu-drawer">
-                <div class="menu-header">
-                  <div class="ceam-logo-small">CEAM</div>
-                </div>
-                <div class="menu-items">
-                  <a class="menu-item">
-                    <span class="menu-icon">🔥</span> Registra la teva activitat
-                    <span class="menu-risk r4">BAIX</span>
-                  </a>
-                  <a class="menu-item">
-                    <span class="menu-icon">📋</span> Historial de quema
-                    <span class="menu-risk r4">BAIX</span>
-                  </a>
-                  <a class="menu-item">
-                    <span class="menu-icon">📄</span> Instruccions Tècniques
-                    <span class="menu-risk r4">BAIX</span>
-                  </a>
-                  <a class="menu-item">
-                    <span class="menu-icon">🌍</span> Entorno
-                    <span class="menu-risk r4">BAIX</span>
-                  </a>
-                  <a class="menu-item">
-                    <span class="menu-icon">🌐</span> Idioma
-                    <span class="menu-risk r4">BAIX</span>
-                  </a>
-                </div>
-                <button class="menu-logout">Tancar sessió</button>
-              </div>
+            <div class="risk-text">
+              <h3 style="color:#1B5E20">Riesgo bajo ahora mismo</h3>
+              <p style="color:#388E3C">Las condiciones permiten iniciar una quema</p>
             </div>
           </div>
-          <div class="phone-home-bar"></div>
         </div>
+        <button class="big-btn green" onclick="goto('alta-quema')">🔥  Dar de alta una quema</button>
+        <div class="stats-row">
+          <div class="stat-card">
+            <div class="stat-val" style="color:#1B5E20">3</div>
+            <div class="stat-label">Mis quemas</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-val" style="color:var(--ios-blue)">247</div>
+            <div class="stat-label">Quemas hoy</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-val" style="color:#E65100">1.842</div>
+            <div class="stat-label">Total campaña</div>
+          </div>
+        </div>
+        <div style="height:8px"></div>
       </div>
+      <div class="tab-bar">
+        <button class="tab-item active" onclick="goto('home-main')">
+          <div class="tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9L12 2L21 9V20A1 1 0 0 1 20 21H15V15H9V21H4A1 1 0 0 1 3 20V9Z"/></svg></div>
+          <span class="tab-label">Inicio</span>
+        </button>
+        <button class="tab-item" onclick="goto('alta-quema')">
+          <div class="tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div>
+          <span class="tab-label">Alta quema</span>
+        </button>
+        <button class="tab-item" onclick="goto('historial')">
+          <div class="tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg></div>
+          <span class="tab-label">Historial</span>
+        </button>
+        <button class="tab-item" onclick="goto('recursos')">
+          <div class="tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+          <span class="tab-label">Recursos</span>
+        </button>
+        <button class="tab-item" onclick="goto('perfil')">
+          <div class="tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <span class="tab-label">Perfil</span>
+        </button>
+      </div>
+    </div>
 
-      <!-- ── Pantalla 7: Registre quema ── -->
-      <div class="screen-wrap">
-        <div class="screen-label">Pantalla 7 — Registre Quema (Alta)</div>
-        <div class="phone-frame">
-          <div class="phone-notch"></div>
-          <div class="phone-screen screen-p7">
-            <div class="status-bar"><span>17:08</span><span style="display:flex;gap:4px;align-items:center;font-size:9px;">▲ 5G 🔋</span></div>
-            <div class="app-screen-header">
-              <button class="back-btn">‹</button>
-              <div class="screen-title-center" style="font-size:11px;">Registra tu activitat</div>
-              <div style="width:24px"></div>
+    <!-- ========== ALTA QUEMA ========== -->
+    <div class="screen" id="screen-alta-quema">
+      <div class="status-bar">
+        <span class="time">9:41</span>
+        <div class="icons"><svg width="16" height="12" fill="none" viewBox="0 0 16 12"><rect x="0" y="3" width="3" height="9" rx="1" fill="currentColor"/><rect x="4.5" y="2" width="3" height="10" rx="1" fill="currentColor"/><rect x="9" y="0" width="3" height="12" rx="1" fill="currentColor"/></svg></div>
+      </div>
+      <div class="nav-bar">
+        <button class="back-btn" onclick="goto('home-main')">
+          <svg viewBox="0 0 10 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 2L2 8L8 14"/></svg>
+          Inicio
+        </button>
+        <span class="title">Alta de quema</span>
+      </div>
+      <div class="scroll-content">
+        <div style="padding:12px 16px 4px">
+          <div class="stepper">
+            <div class="step-item">
+              <div class="step-circle done">✓</div>
+              <span class="step-label">Parcela</span>
             </div>
-
-            <div class="app-form" style="padding:12px;">
-              <div class="app-form-group">
-                <div class="app-form-label">D.N.I. / N.I.E.</div>
-                <div class="app-input-fill">25409558Q</div>
-              </div>
-              <div class="app-form-group" style="margin-top:10px;">
-                <div class="app-form-label">Província</div>
-                <div class="app-select-row">
-                  <div class="app-input-fill app-placeholder">Selecciona la teva província…</div>
-                  <span>›</span>
-                </div>
-              </div>
-              <div class="app-form-group" style="margin-top:10px;">
-                <div class="app-form-label">Municipi</div>
-                <div class="app-select-row">
-                  <div class="app-input-fill app-placeholder">Selecciona el teu municipi…</div>
-                  <span>›</span>
-                </div>
-              </div>
-              <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px;">
-                <div class="app-form-group">
-                  <div class="app-form-label">Polígon</div>
-                  <input class="app-input" type="text" placeholder="Número…" style="font-size:11px;" />
-                </div>
-                <div class="app-form-group">
-                  <div class="app-form-label">Parcel·la</div>
-                  <input class="app-input" type="text" placeholder="Número…" style="font-size:11px;" />
-                </div>
-              </div>
-              <div class="app-form-group" style="margin-top:10px;">
-                <div class="app-form-label">Recinte</div>
-                <input class="app-input" type="text" placeholder="Número…" style="font-size:11px;" />
-              </div>
-              <button class="app-btn-full" style="margin-top:20px;font-size:12px;">Següent</button>
+            <div class="step-line done"></div>
+            <div class="step-item">
+              <div class="step-circle current">2</div>
+              <span class="step-label">Confirmar</span>
+            </div>
+            <div class="step-line"></div>
+            <div class="step-item">
+              <div class="step-circle todo">3</div>
+              <span class="step-label">Enviado</span>
             </div>
           </div>
-          <div class="phone-home-bar"></div>
         </div>
+        <div class="risk-indicator" style="background:#FFEBEE;margin-bottom:4px">
+          <div class="risk-icon-lg" style="background:#FFCDD2">
+            <svg width="26" height="26" fill="none" stroke="#C62828" stroke-width="2.5" stroke-linecap="round" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div class="risk-text">
+            <h3 style="color:#B71C1C">Atención: riesgo moderado a las 11h</h3>
+            <p style="color:#C62828">Asegúrate de iniciar la quema antes de esa hora</p>
+          </div>
+        </div>
+        <div class="section-header">Referencia catastral</div>
+        <div class="ios-field">
+          <div class="ios-field-row">
+            <span class="ios-field-label">Provincia</span>
+            <select class="ios-select"><option>Valencia</option><option>Castellón</option><option>Alicante</option></select>
+          </div>
+          <div class="ios-field-row">
+            <span class="ios-field-label">Municipio</span>
+            <select class="ios-select"><option>Sueca</option><option>Cullera</option><option>Sollana</option><option>Almussafes</option></select>
+          </div>
+          <div class="ios-field-row">
+            <span class="ios-field-label">Polígono</span>
+            <input class="ios-field-input" type="number" placeholder="12" value="12"/>
+          </div>
+          <div class="ios-field-row">
+            <span class="ios-field-label">Parcela</span>
+            <input class="ios-field-input" type="number" placeholder="0047" value="0047"/>
+          </div>
+          <div class="ios-field-row">
+            <span class="ios-field-label">Recinto</span>
+            <input class="ios-field-input" type="text" placeholder="1" value="1"/>
+          </div>
+        </div>
+        <div class="section-header">Información catastral encontrada</div>
+        <div class="info-box">
+          <div class="info-row"><span class="info-key">Titular</span><span class="info-val">Juan Pérez Martínez</span></div>
+          <div class="info-row"><span class="info-key">Superficie</span><span class="info-val">1,24 ha</span></div>
+          <div class="info-row"><span class="info-key">Cultivo</span><span class="info-val">Arroz (Oryza sativa)</span></div>
+          <div class="info-row"><span class="info-key">Coordenadas</span><span class="info-val" style="font-size:13px">39.2281°N 0.3147°W</span></div>
+        </div>
+        <div class="section-header">Condiciones de riesgo al iniciar</div>
+        <div class="ios-card">
+          <div class="ios-card-row" style="cursor:default">
+            <span class="row-label" style="font-size:15px">Hora de inicio</span>
+            <span class="row-value">Ahora (09:41)</span>
+          </div>
+          <div class="ios-card-row" style="cursor:default">
+            <span class="row-label" style="font-size:15px">Nivel de riesgo</span>
+            <span class="badge badge-green">Bajo (4)</span>
+          </div>
+          <div class="ios-card-row" style="cursor:default">
+            <span class="row-label" style="font-size:15px">Localización GPS</span>
+            <span class="badge badge-green">✓ Activada</span>
+          </div>
+        </div>
+        <div style="padding:0 16px 12px">
+          <div style="background:#FFF8E1;border-radius:12px;padding:12px 14px;font-size:13px;color:#E65100;line-height:1.5">
+            ⚠️ Al confirmar, aceptas que inicias la quema bajo las condiciones de riesgo indicadas y te haces responsable de ello.
+          </div>
+        </div>
+        <button class="big-btn green" onclick="goto('quema-confirmada')">Confirmar y registrar quema</button>
+        <button class="big-btn secondary" onclick="goto('home-main')" style="margin-top:4px">Cancelar</button>
+        <div style="height:24px"></div>
       </div>
+    </div>
 
-    </div><!-- /screens-grid -->
-  </div><!-- /preview-wrapper -->
+    <!-- ========== QUEMA CONFIRMADA ========== -->
+    <div class="screen" id="screen-quema-confirmada">
+      <div class="status-bar">
+        <span class="time">9:43</span>
+        <div class="icons"><svg width="16" height="12" fill="none" viewBox="0 0 16 12"><rect x="0" y="3" width="3" height="9" rx="1" fill="currentColor"/><rect x="4.5" y="2" width="3" height="10" rx="1" fill="currentColor"/><rect x="9" y="0" width="3" height="12" rx="1" fill="currentColor"/></svg></div>
+      </div>
+      <div class="scroll-content" style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 32px;gap:20px;text-align:center;">
+        <div style="width:80px;height:80px;background:#E8F5E9;border-radius:50%;display:flex;align-items:center;justify-content:center;">
+          <svg width="44" height="44" fill="none" stroke="#2E7D32" stroke-width="2.5" stroke-linecap="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div>
+          <div style="font-size:26px;font-weight:700;margin-bottom:8px">Quema registrada</div>
+          <div style="font-size:15px;color:var(--ios-gray);line-height:1.6">Tu quema ha sido registrada correctamente en la base de datos de la Fundación CEAM.</div>
+        </div>
+        <div class="info-box" style="width:100%">
+          <div class="info-row"><span class="info-key">Código</span><span class="info-val" style="color:var(--ios-blue)">#QPAR-2026-1847</span></div>
+          <div class="info-row"><span class="info-key">Hora</span><span class="info-val">09:43 h</span></div>
+          <div class="info-row"><span class="info-key">Parcela</span><span class="info-val">Pol. 12 / 0047 / R.1</span></div>
+          <div class="info-row"><span class="info-key">Municipio</span><span class="info-val">Sueca (Valencia)</span></div>
+          <div class="info-row"><span class="info-key">Riesgo en el alta</span><span class="info-val"><span class="badge badge-green">Bajo (4)</span></span></div>
+        </div>
+        <button class="big-btn primary" onclick="goto('home-main')" style="width:100%;margin:0">Volver al inicio</button>
+        <button class="big-btn secondary" onclick="goto('historial')" style="width:100%;margin:0">Ver el historial</button>
+      </div>
+    </div>
 
-  <script src="js/utils.js"></script>
-  <script src="js/app.js"></script>
+    <!-- ========== HISTORIAL ========== -->
+    <div class="screen" id="screen-historial">
+      <div class="status-bar">
+        <span class="time">9:41</span>
+        <div class="icons"><svg width="16" height="12" fill="none" viewBox="0 0 16 12"><rect x="0" y="3" width="3" height="9" rx="1" fill="currentColor"/><rect x="4.5" y="2" width="3" height="10" rx="1" fill="currentColor"/><rect x="9" y="0" width="3" height="12" rx="1" fill="currentColor"/></svg></div>
+      </div>
+      <div class="nav-bar">
+        <button class="back-btn" onclick="goto('home-main')">
+          <svg viewBox="0 0 10 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 2L2 8L8 14"/></svg>
+          Inicio
+        </button>
+        <span class="title">Mis quemas</span>
+        <button class="right-btn">Filtrar</button>
+      </div>
+      <div class="scroll-content">
+        <div class="stats-row" style="padding-top:12px">
+          <div class="stat-card">
+            <div class="stat-val" style="color:#1B5E20">3</div>
+            <div class="stat-label">Total quemas</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-val" style="color:var(--ios-blue)">3,67 ha</div>
+            <div class="stat-label">Superficie total</div>
+          </div>
+        </div>
+        <div class="section-header">Octubre 2026</div>
+        <div class="quema-item" onclick="goto('detall-quema')">
+          <div class="quema-dot-big" style="background:#4CAF50"></div>
+          <div class="quema-info">
+            <div class="quema-parcel">Pol. 12 / 0047 / R.1</div>
+            <div class="quema-date">Sueca · 6 oct 2026</div>
+          </div>
+          <div class="quema-right">
+            <div class="quema-time">09:43</div>
+            <span class="badge badge-green">Riesgo bajo</span>
+          </div>
+        </div>
+        <div class="quema-item" onclick="goto('detall-quema')">
+          <div class="quema-dot-big" style="background:#4CAF50"></div>
+          <div class="quema-info">
+            <div class="quema-parcel">Pol. 08 / 0123 / R.2</div>
+            <div class="quema-date">Sueca · 3 oct 2026</div>
+          </div>
+          <div class="quema-right">
+            <div class="quema-time">08:15</div>
+            <span class="badge badge-green">Riesgo bajo</span>
+          </div>
+        </div>
+        <div class="quema-item" onclick="goto('detall-quema')">
+          <div class="quema-dot-big" style="background:#FF8F00"></div>
+          <div class="quema-info">
+            <div class="quema-parcel">Pol. 05 / 0089 / R.1</div>
+            <div class="quema-date">Sollana · 1 oct 2026</div>
+          </div>
+          <div class="quema-right">
+            <div class="quema-time">10:55</div>
+            <span class="badge badge-orange">Transitorio</span>
+          </div>
+        </div>
+        <div class="section-header">Sin acción necesaria</div>
+        <div style="padding:0 16px 12px">
+          <div style="background:#EFF8FF;border-radius:12px;padding:14px;font-size:14px;color:#1565C0;line-height:1.6;text-align:center">
+            Todas las quemas han sido registradas correctamente. El CEAM conserva una copia de cada alta.
+          </div>
+        </div>
+        <div style="height:20px"></div>
+      </div>
+      <div class="tab-bar">
+        <button class="tab-item" onclick="goto('home-main')"><div class="tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9L12 2L21 9V20A1 1 0 0 1 20 21H15V15H9V21H4A1 1 0 0 1 3 20V9Z"/></svg></div><span class="tab-label">Inicio</span></button>
+        <button class="tab-item" onclick="goto('alta-quema')"><div class="tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div><span class="tab-label">Alta quema</span></button>
+        <button class="tab-item active" onclick="goto('historial')"><div class="tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg></div><span class="tab-label">Historial</span></button>
+        <button class="tab-item" onclick="goto('recursos')"><div class="tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/><polyline points="14 2 14 8 20 8"/></svg></div><span class="tab-label">Recursos</span></button>
+        <button class="tab-item" onclick="goto('perfil')"><div class="tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><span class="tab-label">Perfil</span></button>
+      </div>
+    </div>
+
+    <!-- ========== DETALLE QUEMA ========== -->
+    <div class="screen" id="screen-detall-quema">
+      <div class="status-bar">
+        <span class="time">9:41</span>
+        <div class="icons"><svg width="16" height="12" fill="none" viewBox="0 0 16 12"><rect x="0" y="3" width="3" height="9" rx="1" fill="currentColor"/><rect x="4.5" y="2" width="3" height="10" rx="1" fill="currentColor"/><rect x="9" y="0" width="3" height="12" rx="1" fill="currentColor"/></svg></div>
+      </div>
+      <div class="nav-bar">
+        <button class="back-btn" onclick="goto('historial')">
+          <svg viewBox="0 0 10 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 2L2 8L8 14"/></svg>
+          Historial
+        </button>
+        <span class="title">Detalle quema</span>
+      </div>
+      <div class="scroll-content">
+        <div style="padding:16px 16px 0;display:flex;align-items:center;gap:12px">
+          <div style="width:48px;height:48px;background:#E8F5E9;border-radius:14px;display:flex;align-items:center;justify-content:center">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" stroke-width="2" stroke-linecap="round"><path d="M12 2c0 0-5 4.5-5 9a5 5 0 0 0 10 0c0-4.5-5-9-5-9z"/><path d="M9 14c0 0 1 2 3 2s3-2 3-2"/></svg>
+          </div>
+          <div>
+            <div style="font-size:19px;font-weight:700">#QPAR-2026-1847</div>
+            <span class="badge badge-green">Registrada correctamente</span>
+          </div>
+        </div>
+        <div class="section-header">Datos de la parcela</div>
+        <div class="info-box">
+          <div class="info-row"><span class="info-key">Municipio</span><span class="info-val">Sueca (Valencia)</span></div>
+          <div class="info-row"><span class="info-key">Polígono</span><span class="info-val">12</span></div>
+          <div class="info-row"><span class="info-key">Parcela</span><span class="info-val">0047</span></div>
+          <div class="info-row"><span class="info-key">Recinto</span><span class="info-val">1</span></div>
+          <div class="info-row"><span class="info-key">Superficie</span><span class="info-val">1,24 ha</span></div>
+          <div class="info-row"><span class="info-key">Titular</span><span class="info-val">Juan Pérez Martínez</span></div>
+        </div>
+        <div class="section-header">Condiciones en el alta</div>
+        <div class="info-box">
+          <div class="info-row"><span class="info-key">Fecha/hora</span><span class="info-val">06/10/2026 · 09:43</span></div>
+          <div class="info-row"><span class="info-key">Nivel de riesgo</span><span class="info-val"><span class="badge badge-green">Bajo (4)</span></span></div>
+          <div class="info-row"><span class="info-key">Coordenadas GPS</span><span class="info-val" style="font-size:12px">39.2281°N 0.3147°W</span></div>
+        </div>
+        <div class="section-header">Localización</div>
+        <div class="map-bg">
+          <svg width="100%" height="100%" viewBox="0 0 340 160" style="opacity:0.6">
+            <rect width="340" height="160" fill="#C8D5B9"/>
+            <rect x="20" y="20" width="80" height="50" rx="4" fill="#8FAF72" opacity=".7"/>
+            <rect x="110" y="10" width="100" height="70" rx="4" fill="#7A9E60" opacity=".7"/>
+            <rect x="220" y="25" width="100" height="45" rx="4" fill="#8FAF72" opacity=".7"/>
+            <rect x="30" y="85" width="120" height="55" rx="4" fill="#7A9E60" opacity=".6"/>
+            <rect x="160" y="90" width="80" height="50" rx="4" fill="#8FAF72" opacity=".7"/>
+            <path d="M130 50 Q160 20 200 60 Q180 90 160 80Z" fill="#5A8A45" opacity=".5"/>
+            <circle cx="170" cy="62" r="10" fill="#007AFF" opacity=".9"/>
+            <circle cx="170" cy="62" r="5" fill="#fff"/>
+            <circle cx="170" cy="62" r="22" fill="#007AFF" opacity=".15"/>
+          </svg>
+        </div>
+        <div style="height:20px"></div>
+      </div>
+    </div>
+
+    <!-- ========== RECURSOS ========== -->
+    <div class="screen" id="screen-recursos">
+      <div class="status-bar">
+        <span class="time">9:41</span>
+        <div class="icons"><svg width="16" height="12" fill="none" viewBox="0 0 16 12"><rect x="0" y="3" width="3" height="9" rx="1" fill="currentColor"/><rect x="4.5" y="2" width="3" height="10" rx="1" fill="currentColor"/><rect x="9" y="0" width="3" height="12" rx="1" fill="currentColor"/></svg></div>
+      </div>
+      <div class="nav-bar">
+        <span class="title">Recursos CEAM</span>
+      </div>
+      <div class="scroll-content">
+        <div class="lang-row">
+          <button class="lang-btn active" onclick="toggleLang(this)">🇪🇸 Castellano</button>
+          <button class="lang-btn" onclick="toggleLang(this)">🇻🇦 Valenciano</button>
+        </div>
+        <div class="section-header">Documentos PDF</div>
+        <div class="pdf-item">
+          <div class="pdf-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+          <div>
+            <div class="pdf-name">Guía de buenas prácticas</div>
+            <div style="font-size:12px;color:var(--ios-gray)">CEAM · 2026 · 1,2 MB</div>
+          </div>
+          <svg width="18" height="18" fill="none" stroke="var(--ios-blue)" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </div>
+        <div class="pdf-item">
+          <div class="pdf-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+          <div>
+            <div class="pdf-name">Normativa de quemas 2026</div>
+            <div style="font-size:12px;color:var(--ios-gray)">CEAM · 2026 · 0,8 MB</div>
+          </div>
+          <svg width="18" height="18" fill="none" stroke="var(--ios-blue)" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </div>
+        <div class="pdf-item">
+          <div class="pdf-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+          <div>
+            <div class="pdf-name">Manual de usuario QUEPAR</div>
+            <div style="font-size:12px;color:var(--ios-gray)">CEAM · 2026 · 2,1 MB</div>
+          </div>
+          <svg width="18" height="18" fill="none" stroke="var(--ios-blue)" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </div>
+        <div class="section-header">Enlaces web</div>
+        <div class="ios-card">
+          <div class="ios-card-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <span class="row-label">Portal web CEAM</span>
+            <svg class="chevron" viewBox="0 0 7 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 1L6 6L1 11"/></svg>
+          </div>
+          <div class="ios-card-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.42 2 2 0 0 1 3.6 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.1a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.5 16.92z"/></svg>
+            <span class="row-label">Contacto CEAM</span>
+            <svg class="chevron" viewBox="0 0 7 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 1L6 6L1 11"/></svg>
+          </div>
+        </div>
+        <div style="height:20px"></div>
+      </div>
+      <div class="tab-bar">
+        <button class="tab-item" onclick="goto('home-main')"><div class="tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9L12 2L21 9V20A1 1 0 0 1 20 21H15V15H9V21H4A1 1 0 0 1 3 20V9Z"/></svg></div><span class="tab-label">Inicio</span></button>
+        <button class="tab-item" onclick="goto('alta-quema')"><div class="tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div><span class="tab-label">Alta quema</span></button>
+        <button class="tab-item" onclick="goto('historial')"><div class="tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg></div><span class="tab-label">Historial</span></button>
+        <button class="tab-item active" onclick="goto('recursos')"><div class="tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/><polyline points="14 2 14 8 20 8"/></svg></div><span class="tab-label">Recursos</span></button>
+        <button class="tab-item" onclick="goto('perfil')"><div class="tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><span class="tab-label">Perfil</span></button>
+      </div>
+    </div>
+
+    <!-- ========== PERFIL ========== -->
+    <div class="screen" id="screen-perfil">
+      <div class="status-bar">
+        <span class="time">9:41</span>
+        <div class="icons"><svg width="16" height="12" fill="none" viewBox="0 0 16 12"><rect x="0" y="3" width="3" height="9" rx="1" fill="currentColor"/><rect x="4.5" y="2" width="3" height="10" rx="1" fill="currentColor"/><rect x="9" y="0" width="3" height="12" rx="1" fill="currentColor"/></svg></div>
+      </div>
+      <div class="nav-bar">
+        <span class="title">Perfil</span>
+        <button class="right-btn" onclick="goto('home-public')">Cerrar sesión</button>
+      </div>
+      <div class="scroll-content">
+        <div style="padding:20px 16px 12px;display:flex;align-items:center;gap:16px">
+          <div style="width:64px;height:64px;background:#1B5E20;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;color:#fff;flex-shrink:0">JP</div>
+          <div>
+            <div style="font-size:20px;font-weight:700">Juan Pérez Martínez</div>
+            <div style="font-size:14px;color:var(--ios-gray);margin-top:2px">DNI: 482***45K</div>
+            <span class="badge badge-green" style="margin-top:6px;display:inline-block">Usuario verificado</span>
+          </div>
+        </div>
+        <div class="section-header">Datos de identificación</div>
+        <div class="ios-card">
+          <div class="ios-card-row" style="cursor:default">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+            <span class="row-label">DNI / NIE</span>
+            <span class="row-value">482***45K</span>
+          </div>
+          <div class="ios-card-row" style="cursor:default">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.19 18a19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2 3.42 2 2 0 0 1 3.6 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.1a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.5 16.92z"/></svg>
+            <span class="row-label">Teléfono</span>
+            <span class="row-value">612 *** 678</span>
+          </div>
+          <div class="ios-card-row" style="cursor:default">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg>
+            <span class="row-label">Alta en QUEPAR</span>
+            <span class="row-value">15/09/2024</span>
+          </div>
+        </div>
+        <div class="section-header">Campaña 2026</div>
+        <div class="ios-card">
+          <div class="ios-card-row" style="cursor:default">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <span class="row-label">Parcelas registradas</span>
+            <span class="row-value">4 parcelas</span>
+          </div>
+          <div class="ios-card-row" onclick="goto('historial')">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
+            <span class="row-label">Historial de quemas</span>
+            <span class="row-value">3 quemas</span>
+            <svg class="chevron" viewBox="0 0 7 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 1L6 6L1 11"/></svg>
+          </div>
+        </div>
+        <div class="section-header">Idioma</div>
+        <div class="lang-row">
+          <button class="lang-btn active" onclick="toggleLang(this)">🇪🇸 Castellano</button>
+          <button class="lang-btn" onclick="toggleLang(this)">🇻🇦 Valenciano</button>
+        </div>
+        <div class="section-header">Legal</div>
+        <div class="ios-card">
+          <div class="ios-card-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span class="row-label">Política de privacidad</span>
+            <svg class="chevron" viewBox="0 0 7 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 1L6 6L1 11"/></svg>
+          </div>
+          <div class="ios-card-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span class="row-label">Términos de uso</span>
+            <svg class="chevron" viewBox="0 0 7 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 1L6 6L1 11"/></svg>
+          </div>
+        </div>
+        <button class="big-btn destructive" onclick="goto('home-public')" style="margin-top:8px">Cerrar sesión</button>
+        <div style="height:24px"></div>
+      </div>
+      <div class="tab-bar">
+        <button class="tab-item" onclick="goto('home-main')"><div class="tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9L12 2L21 9V20A1 1 0 0 1 20 21H15V15H9V21H4A1 1 0 0 1 3 20V9Z"/></svg></div><span class="tab-label">Inicio</span></button>
+        <button class="tab-item" onclick="goto('alta-quema')"><div class="tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div><span class="tab-label">Alta quema</span></button>
+        <button class="tab-item" onclick="goto('historial')"><div class="tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg></div><span class="tab-label">Historial</span></button>
+        <button class="tab-item" onclick="goto('recursos')"><div class="tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/><polyline points="14 2 14 8 20 8"/></svg></div><span class="tab-label">Recursos</span></button>
+        <button class="tab-item active" onclick="goto('perfil')"><div class="tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><span class="tab-label">Perfil</span></button>
+      </div>
+    </div>
+
+  </div><!-- /device-screen -->
+</div><!-- /device-shell -->
+
+<script src="app.js"></script>
 </body>
 </html>
